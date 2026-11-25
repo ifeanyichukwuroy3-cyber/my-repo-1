@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b14">
+  <meta name="description" content="Nova AI — turn your ideas into cinematic videos.">
+  <title>Nova AI — Create videos from imagination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✳</span><span>NOVA<span class="brand-light"> AI</span></span></a>
+    <nav><a href="#create">Create</a><a href="#how">How it works</a><a href="#plans">Plans</a></nav>
+    <div class="top-actions"><span class="status"><i></i><span id="modeLabel">Demo mode</span></span><button class="avatar" aria-label="Profile">N</button></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="sparkle">✦</span> YOUR IDEAS, IN MOTION</div>
+      <h1>Make something<br><span class="gradient-text">unforgettable.</span></h1>
+      <p class="hero-copy">Turn a simple idea into a cinematic video. Your next great scene starts with a prompt.</p>
+      <a class="primary-cta" href="#create">Start creating <span>↗</span></a>
+      <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+      <div class="hero-art"><div class="art-glow"></div><div class="art-card art-back"><div class="tiny-tag">SCENE 02</div><div class="art-mountain"></div></div><div class="art-card art-front"><div class="tiny-tag">NOVA MOTION</div><div class="art-sun"></div><div class="art-land"></div><div class="art-caption">A world beyond<br>the ordinary.</div><div class="play">▶</div></div><div class="floating-chip chip-top">✦ AI powered</div><div class="floating-chip chip-bottom"><span class="pulse"></span> Imagination loading</div></div>
+    </section>
+    <section class="workspace section-wrap" id="create">
+      <div class="section-heading"><div><div class="eyebrow">THE CREATIVE SPACE</div><h2>What will you create?</h2></div><span class="step-label">01 <b>/</b> 03</span></div>
+      <div class="studio-grid">
+        <div class="composer panel">
+          <div class="tab-row"><button class="tab active" data-tab="text">✦ Text to video</button><button class="tab" data-tab="image">▧ Image to video</button></div>
+          <label class="field-label" for="prompt">Describe your video</label>
+          <textarea id="prompt" maxlength="1500" placeholder="A tiny astronaut explores a glowing garden on a distant planet, cinematic lighting, slow camera movement..."></textarea>
+          <div class="prompt-foot"><button id="surprise" class="subtle-button">✧ Surprise me</button><span id="charCount">0 / 1,500</span></div>
+          <div id="imageUpload" class="upload-box hidden"><input type="file" id="imageFile" accept="image/png,image/jpeg,image/webp"><div class="upload-icon">＋</div><strong>Drop an image or browse</strong><small>PNG, JPG or WEBP · up to 10 MB</small><span id="fileName"></span></div>
+          <div class="settings">
+            <div><label class="field-label" for="ratio">Aspect ratio</label><select id="ratio"><option value="16:9">Landscape · 16:9</option><option value="9:16">Portrait · 9:16</option><option value="1:1">Square · 1:1</option></select></div>
+            <div><label class="field-label" for="duration">Duration</label><select id="duration"><option value="5">5 seconds</option><option value="10">10 seconds</option></select></div>
+            <div><label class="field-label" for="style">Visual style</label><select id="style"><option>Cinematic</option><option>Anime</option><option>3D animation</option><option>Documentary</option><option>Dreamlike</option></select></div>
+          </div>
+          <button id="generate" class="generate-button"><span>✦</span> Generate video <b>→</b></button>
+          <p class="fine-print">Demo mode is active. Real video generation requires a connected provider and may use credits.</p>
+          <div id="notice" class="notice hidden" role="status"></div>
+        </div>
+        <aside class="preview-column">
+          <div class="preview panel">
+            <div class="preview-head"><span>PREVIEW CANVAS</span><span class="live-dot">● READY</span></div>
+            <div class="preview-screen" id="previewScreen"><div class="preview-visual"><div class="preview-moon"></div><div class="preview-hill h1"></div><div class="preview-hill h2"></div><div class="preview-stars">✦　·　✧　　 ·</div></div><div class="preview-overlay"><span class="preview-play">▶</span><span>Your preview will appear here</span></div></div>
+            <div class="preview-meta"><span id="previewRatio">16:9 · Landscape</span><span id="previewDuration">5 seconds</span></div>
+            <a id="downloadVideo" class="download-button hidden" href="#" download="nova-ai-video.mp4">↓ Download video to PC</a>
+          </div>
+          <div class="tip-card"><span class="tip-icon">✧</span><div><strong>A little creative direction goes a long way.</strong><p>Describe the subject, setting, lighting, and camera movement for a more intentional result.</p></div></div>
+        </aside>
+      </div>
+    </section>
+    <section class="history section-wrap"><div class="section-heading"><div><div class="eyebrow">YOUR WORKSPACE</div><h2>Recent creations</h2></div><button id="clearHistory" class="subtle-button">Clear history</button></div><div id="historyList" class="history-list"><div class="empty-history"><span>✧</span><p>Your creations will show up here.</p></div></div></section>
+    <section class="how section-wrap" id="how"><div class="eyebrow">FROM IDEA TO VIDEO</div><h2>Three steps. Endless stories.</h2><div class="steps"><article><span>01</span><h3>Imagine it</h3><p>Write a prompt describing the scene you want to bring to life.</p></article><article><span>02</span><h3>Make it yours</h3><p>Choose a format, duration, and visual direction for your video.</p></article><article><span>03</span><h3>Bring it to life</h3><p>Connect a video engine, generate your clip, and save your result.</p></article></div></section>
+    <section class="plans section-wrap" id="plans"><div class="eyebrow">SIMPLE OPTIONS</div><h2>Room to create.</h2><p class="plans-intro">Start exploring, then choose more creative capacity when you need it.</p><div class="plan-grid"><article class="plan-card"><div class="plan-name">Free</div><div class="price">$0 <small>/ forever</small></div><p>For trying ideas and exploring what's possible.</p><ul><li>Prompt-based creation interface</li><li>Basic formats and settings</li><li>Local creation history</li></ul><a href="#create" class="plan-link">Start free →</a></article><article class="plan-card featured"><div class="popular">FOR BIG IDEAS</div><div class="plan-name">Creator</div><div class="price">Coming soon</div><p>For creators who want more room to experiment.</p><ul><li>Higher generation limits</li><li>More creative controls</li><li>Priority generation queue</li></ul><a href="#create" class="plan-link">Explore Nova →</a></article></div><p class="pricing-note">Plans are preview information only. Payments, accounts, and credit limits are not enabled in this starter.</p></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">✳</span><span>NOVA<span class="brand-light"> AI</span></span></a><span>Make the impossible feel close.</span><span>© 2026 Nova AI</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
